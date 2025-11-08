@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset básico */ 
 * {
     margin: 0;
     padding: 0;
@@ -36,11 +36,14 @@ body {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: #f5deb3;
 }
 
-/* Hero */
+/* ---------------------- */
+/* Sección HERO (Inicio) */
+/* ---------------------- */
 .hero {
     display: flex;
     justify-content: space-between;
@@ -87,18 +90,177 @@ body {
     color: #0e0e0e;
 }
 
-/* Hero image */
+/* Imagen circular principal */
 .hero-image img {
     width: 700px;
     height: 700px;
     object-fit: cover;
     border-radius: 50%;
     position: relative;
-    left: 50px;  /* mueve la imagen a la izquierda */
-    top: -110px;   /* mueve la imagen hacia arriba */
+    left: 50px;   /* mueve la imagen a la izquierda */
+    top: -110px;  /* mueve la imagen hacia arriba */
 }
 
+/* ---------------------- */
+/* Sección SOBRE MÍ */
+/* ---------------------- */
+.sobre-mi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 50px;
+    gap: 50px;
+}
+
+.sobre-texto {
+    max-width: 600px;
+}
+
+.sobre-texto h1 {
+    font-size: 40px;
+    margin-bottom: 25px;
+    color: #f5deb3;
+}
+
+.sobre-texto p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #d6c5b3;
+}
+
+.sobre-texto .btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
+/* Imagen sobre mí */
+.sobre-imagen img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    left: 40px;
+    top: -80px;
+}
+
+/* ---------------------- */
+/* Sección FORMACIÓN */
+/* ---------------------- */
+.formacion {
+    padding: 80px 50px;
+}
+
+.formacion h1 {
+    font-size: 42px;
+    color: #f5deb3;
+    margin-bottom: 50px;
+}
+
+.formacion-contenedor {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.columna {
+    flex: 1;
+    min-width: 300px;
+}
+
+.columna h2 {
+    font-size: 22px;
+    color: #f5deb3;
+    margin-bottom: 15px;
+}
+
+.card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.card:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-5px);
+}
+
+.card p {
+    color: #d6c5b3;
+    font-size: 18px;
+}
+
+/* ---------------------- */
+/* Sección CURSOS */
+/* ---------------------- */
+.cursos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 100px 50px;
+    gap: 60px;
+}
+
+.cursos-texto {
+    flex: 1;
+}
+
+.cursos-texto h1 {
+    font-size: 48px;
+    color: #d6c5b3;
+    margin-bottom: 20px;
+}
+
+.cursos-texto p {
+    font-size: 18px;
+    color: #c1b2a0;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cursos-lista {
+    flex: 1;
+}
+
+.cursos-lista h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #d6c5b3;
+    text-align: center;
+}
+
+.curso-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #e0d4c0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.curso-card:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-5px);
+}
+
+.curso-card h4 {
+    color: #d6c5b3;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.curso-card p {
+    font-size: 16px;
+    color: #b9a998;
+}
+
+/* ---------------------- */
 /* Footer */
+/* ---------------------- */
 footer {
     background-color: #1a1a1a;
     text-align: center;
@@ -122,21 +284,839 @@ footer p {
     filter: invert(50%);
 }
 
+/* ---------------------- */
 /* Responsive */
+/* ---------------------- */
 @media (max-width: 900px) {
-    .hero {
+    .hero,
+    .sobre-mi,
+    .formacion-contenedor,
+    .cursos {
         flex-direction: column-reverse;
         text-align: center;
     }
 
-    .hero-image img {
-        width: 200px;
-        height: 200px;
+    .hero-image img,
+    .sobre-imagen img {
+        width: 220px;
+        height: 220px;
         margin-bottom: 30px;
+        position: static;
     }
 
     .navbar {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .formacion h1,
+    .cursos-texto h1 {
+        text-align: center;
+    }
+
+    .card,
+    .curso-card {
+        margin: 0 auto 25px auto;
+        max-width: 350px;
+    }
+
+    .cursos {
+        padding: 60px 20px;
+    }
+}
+
+/* ---------------------- */
+/* Sección CURSOS (Lista de cursos con íconos) */
+/* ---------------------- */
+.cursos-grid {
+    padding: 80px 50px;
+}
+
+.cursos-grid h1 {
+    font-size: 42px;
+    color: #f5deb3;
+    margin-bottom: 40px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.grid-item {
+    background-color: transparent;
+    border: 1px solid #d6c5b3;
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.grid-item:hover {
+    background-color: #1a1a1a;
+    transform: translateY(-5px);
+    border-color: #f5deb3;
+}
+
+.grid-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    filter: invert(80%);
+}
+
+.grid-item p {
+    font-size: 18px;
+    color: #d6c5b3;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cursos-grid {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .grid-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .grid-item p {
+        font-size: 16px;
+    }
+}
+
+/* ---------------------- */
+/* Página de detalle del curso */
+/* ---------------------- */
+.curso-detalle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+    padding: 100px 50px;
+}
+
+.curso-imagen img {
+    width: 600px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+}
+
+.curso-info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.curso-info h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #f5deb3;
+}
+
+/* Acordeones */
+details {
+    background-color: transparent;
+    border: 1px solid #d6c5b3;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    color: #d6c5b3;
+    transition: all 0.3s ease;
+}
+
+details summary {
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+}
+
+details[open] {
+    background-color: #1a1a1a;
+    border-color: #f5deb3;
+}
+
+details p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #c1b2a0;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .curso-detalle {
+        flex-direction: column;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .curso-imagen img {
+        width: 100%;
+        height: auto;
+    }
+
+    .curso-info {
+        max-width: 100%;
+    }
+}
+
+/* ---------------------- */
+/* Hacer que cada curso sea un botón clickeable */
+/* ---------------------- */
+.grid-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.grid-item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    border: 1px solid #d6c5b3;
+    border-radius: 12px;
+    padding: 35px 25px;
+    transition: all 0.3s ease;
+}
+
+.grid-item:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-5px);
+    border-color: #f5deb3;
+}
+
+.grid-item img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+    filter: invert(80%);
+    transition: filter 0.3s;
+}
+
+.grid-item:hover img {
+    filter: invert(60%);
+}
+
+.grid-item p {
+    font-size: 18px;
+    color: #d6c5b3;
+}
+
+/* ---------------------- */
+/* Sección HABILIDADES */
+/* ---------------------- */
+.habilidades {
+    padding: 80px 50px;
+    position: relative; /* Necesario para posicionar el gran título "Habilidades" */
+    overflow: hidden; /* Para contener el título grande */
+    min-height: 80vh;
+}
+
+.habilidades-contenedor {
+    display: flex;
+    justify-content: flex-start; /* Alinea las columnas al inicio */
+    gap: 100px; /* Espacio entre las columnas principales */
+    position: relative;
+    z-index: 10; /* Asegura que el contenido esté sobre el título grande */
+}
+
+.habilidades-columna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre las tarjetas de habilidad */
+}
+
+.columna-titulo {
+    font-size: 24px;
+    color: #d6c5b3; /* Color de texto claro */
+    margin-bottom: 20px;
+    font-weight: normal; /* Para que no sea tan grueso como el h2 por defecto */
+}
+
+/* Estilo general de las tarjetas de habilidad */
+.habilidad-card {
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 150px; /* Ancho fijo para las tarjetas */
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #d6c5b3;
+    transition: background-color 0.3s;
+}
+
+.habilidad-nombre {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.habilidad-nivel {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Colores de fondo de las tarjetas (basados en la imagen) */
+/* Colores oscuro-azulado para Lenguajes y Frameworks */
+.card-avanzado,
+.card-intermedio,
+.card-basico {
+    background-color: #1a2a33; /* Un azul oscuro similar al de la imagen */
+}
+
+/* Color crema/beige para BBDD */
+.card-bbdd {
+    background-color: #a39580; /* Color beige/marrón claro */
+    color: #0e0e0e; /* Texto oscuro para contraste */
+}
+
+/* Ajuste específico para las BBDD con colores alternativos si es necesario (opcional) */
+.card-basico-alt {
+    background-color: #a39580;
+}
+
+.card-intermedio-alt {
+    background-color: #8c7f6b;
+}
+
+/* Gran título "Habilidades" en la esquina inferior derecha */
+.habilidades-title {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    font-size: 120px; /* Tamaño grande */
+    color: #2e261f; /* Color oscuro para el efecto de fondo */
+    opacity: 0.8;
+    z-index: 5; /* Detrás del contenido pero encima del fondo */
+    pointer-events: none; /* Ignora clics */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .habilidades-contenedor {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .habilidades-columna {
+        align-items: center;
+    }
+
+    .habilidad-card {
+        width: 180px;
+        align-items: center;
+    }
+
+    .habilidades-title {
+        font-size: 80px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* ---------------------- */
+/* Sección PROYECTOS */
+/* ---------------------- */
+.proyectos {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 50px;
+    gap: 80px;
+    min-height: 80vh;
+    align-items: flex-start;
+}
+
+.proyectos-info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.proyectos-titulo {
+    font-size: 60px;
+    color: #d6c5b3;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.proyectos-descripcion {
+    font-size: 18px;
+    color: #c1b2a0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.btn-proyectos-primary {
+    background-color: #a39580; /* Color beige/crema similar al botón de la imagen */
+    color: #0e0e0e;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.btn-proyectos-primary:hover {
+    background-color: #f5deb3;
+}
+
+/* Estilo para el botón de GitHub */
+.repositorio-github {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d6c5b3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 250px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.repositorio-github:hover {
+    background-color: #1a1a1a;
+    border-color: #f5deb3;
+}
+
+.github-icon-proyectos {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: invert(80%); /* Para que el ícono sea claro */
+}
+
+.btn-github {
+    text-decoration: none;
+    color: #d6c5b3;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* Estilos para la columna de proyectos recientes */
+.proyectos-recientes {
+    flex: 1;
+    max-width: 450px;
+}
+
+.recientes-titulo {
+    font-size: 20px;
+    color: #d6c5b3;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.proyecto-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1a2a33; /* Color azul oscuro/gris de las tarjetas */
+    color: #d6c5b3;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 110px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.proyecto-card:hover {
+    background-color: #2a3a43;
+    transform: translateX(5px);
+}
+
+.proyecto-subtitulo {
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+
+/* Responsive adjustments for Proyectos */
+@media (max-width: 900px) {
+    .proyectos {
+        flex-direction: column;
+        padding: 60px 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .proyectos-info {
+        max-width: 100%;
+    }
+
+    .proyectos-titulo {
+        font-size: 48px;
+    }
+    
+    .btn-proyectos-primary {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    .repositorio-github {
+        margin: 0 auto 40px auto;
+    }
+
+    .proyectos-recientes {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .recientes-titulo {
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+
+/* ---------------------- */
+/* Sección PROYECTOS (Listado completo) - ESTILOS NUEVOS/AJUSTADOS */
+/* ---------------------- */
+.proyectos-listado {
+    /* Mantiene el padding y la altura mínima */
+    padding: 100px 70px; 
+    min-height: 80vh;
+}
+
+.proyectos-listado-titulo {
+    /* Estilo del título principal "Proyectos" */
+    font-size: 60px;
+    color: #a39580; /* Color café/beige del título según la imagen */
+    margin-bottom: 50px;
+    padding-left: 20px; /* Ajuste visual para separar del borde */
+}
+
+.proyectos-grid-container {
+    display: grid;
+    /* Define 3 columnas para el diseño de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px;
+}
+
+.proyecto-listado-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid #333; /* Borde sutil */
+    border-radius: 5px;
+    padding: 20px;
+    color: #d6c5b3;
+    transition: border-color 0.3s, background-color 0.3s;
+    height: 350px; /* Altura fija similar a la imagen */
+    justify-content: flex-end; /* Mantiene el contenido en la parte inferior */
+}
+
+.proyecto-listado-card:hover {
+    border-color: #f5deb3;
+    background-color: #1a1a1a;
+}
+
+.proyecto-listado-imagen {
+    /* Estilo del placeholder de imagen (el cuadrado gris/blanco) */
+    width: 100%;
+    height: 65%;
+    background-color: #ccc; /* Color del placeholder */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyecto-listado-nombre {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d6c5b3;
+    line-height: 1.3;
+}
+
+/* ---------------------- */
+/* Responsive para Listado de Proyectos */
+/* ---------------------- */
+@media (max-width: 900px) {
+    .proyectos-listado {
+        padding: 60px 20px;
+    }
+
+    .proyectos-grid-container {
+        /* Pasa a una sola columna en móviles */
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+
+    .proyectos-listado-titulo {
+        font-size: 48px;
+        text-align: center;
+        padding-left: 0;
+    }
+}
+
+/* ---------------------- */
+/* Página de detalle del PROYECTO (proyecto.html) */
+/* ---------------------- */
+.detalle-proyecto-contenedor {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 80px; /* Separación mayor entre imagen e info */
+    padding: 100px 50px;
+    min-height: 80vh;
+}
+
+/* Columna izquierda: Imagen del proyecto */
+.proyecto-detalle-imagen {
+    flex: 1;
+    max-width: 650px; /* Tamaño máximo para la imagen */
+}
+
+.imagen-placeholder-grande {
+    /* Mantiene el estilo placeholder gris de la imagen */
+    width: 100%;
+    height: 450px; /* Altura representativa para la imagen grande */
+    background-color: #333; /* Un gris oscuro para el placeholder */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.proyecto-detalle-imagen img {
+    /* Si usas la etiqueta <img> */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Columna derecha: Información del proyecto */
+.proyecto-detalle-info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.proyecto-detalle-nombre {
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #f5deb3;
+    line-height: 1.1;
+}
+
+/* Estilo para el contenido dentro del acordeón (detalles) */
+.contenido-acordeon {
+    padding: 10px 0 5px 0;
+}
+
+.contenido-acordeon p {
+    margin-bottom: 15px;
+}
+
+.contenido-acordeon ul {
+    list-style: disc;
+    margin-left: 20px;
+    line-height: 1.5;
+    color: #c1b2a0;
+}
+
+.contenido-acordeon ul li {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.btn-acordeon {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+
+/* ---------------------- */
+/* Responsive para Detalle del Proyecto */
+/* ---------------------- */
+@media (max-width: 1100px) {
+    /* En pantallas medianas, reduce el gap y el ancho máximo de la imagen */
+    .detalle-proyecto-contenedor {
+        gap: 40px;
+        padding: 80px 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .detalle-proyecto-contenedor {
+        /* Pasa a disposición de columna en móviles */
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 20px;
+        gap: 40px;
+    }
+
+    .proyecto-detalle-imagen,
+    .proyecto-detalle-info {
+        max-width: 100%; /* Ocupa todo el ancho */
+        width: 100%;
+    }
+
+    .imagen-placeholder-grande {
+        height: 250px; /* Reduce la altura en móvil */
+    }
+
+    .proyecto-detalle-nombre {
+        font-size: 32px;
+        text-align: center;
+    }
+}
+
+/* ---------------------- */
+/* Sección CONTACTO */
+/* ---------------------- */
+.seccion-contacto {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 100px 50px;
+    gap: 80px;
+    min-height: 80vh;
+}
+
+/* Columna de Información */
+.contacto-info {
+    flex: 1;
+    max-width: 45%;
+}
+
+.contacto-titulo {
+    font-size: 60px;
+    color: #a39580; /* Color beige/marrón del título */
+    margin-bottom: 20px;
+}
+
+.contacto-subtitulo {
+    font-size: 20px;
+    color: #c1b2a0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Botón de LinkedIn */
+.btn-linkedin {
+    display: flex;
+    align-items: center;
+    background-color: #a39580; /* Fondo beige del botón */
+    color: #0e0e0e; /* Texto oscuro */
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    width: 200px;
+    justify-content: center;
+}
+
+.btn-linkedin:hover {
+    background-color: #f5deb3;
+}
+
+.linkedin-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    /* Asegúrate de que el ícono de LinkedIn sea de color oscuro (o inviértelo si es blanco) */
+    filter: none; 
+}
+
+/* Columna del Formulario */
+.contacto-formulario-contenedor {
+    flex: 1;
+    max-width: 55%;
+    /* El formulario se va a estirar al 100% de este contenedor */
+}
+
+.contacto-formulario {
+    display: flex;
+    flex-direction: column;
+    /* Color de fondo beige del formulario completo */
+    background-color: #a39580; 
+    padding: 40px;
+    border-radius: 8px;
+}
+
+/* Estilos de los campos de entrada */
+.input-beige {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.05); /* Fondo muy sutilmente más oscuro para los campos */
+    color: #0e0e0e;
+    resize: vertical; /* Permite redimensionar el textarea verticalmente */
+}
+
+.input-beige::placeholder {
+    color: #333; /* Color de placeholder oscuro */
+    opacity: 0.8;
+}
+
+/* Estilo del botón Enviar */
+.btn-enviar {
+    background-color: #333; /* Fondo oscuro (gris/negro) */
+    color: #d6c5b3; /* Texto claro */
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #0e0e0e; /* Más oscuro */
+    color: #f5deb3;
+}
+
+/* ---------------------- */
+/* Responsive para Contacto */
+/* ---------------------- */
+@media (max-width: 900px) {
+    .seccion-contacto {
+        /* Pasa a columna */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 60px 20px;
+        gap: 40px;
+    }
+
+    .contacto-info,
+    .contacto-formulario-contenedor {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .contacto-titulo {
+        font-size: 48px;
+    }
+
+    .btn-linkedin {
+        margin: 0 auto; /* Centrar el botón */
     }
 }
