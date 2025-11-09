@@ -234,7 +234,8 @@ body {
 }
 
 .curso-card {
-    background-color: #1a1a1a;
+    background-color: #1a2a33; /* Un azul oscuro similar al de la imagen */
+;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
@@ -262,7 +263,8 @@ body {
 /* Footer */
 /* ---------------------- */
 footer {
-    background-color: #1a1a1a;
+    background-color: #1a2a33; /* Un azul oscuro similar al de la imagen */
+;
     text-align: center;
     padding: 30px;
     margin-top: 50px;
@@ -597,7 +599,7 @@ details p {
     bottom: 50px;
     right: 50px;
     font-size: 120px; /* Tamaño grande */
-    color: #2e261f; /* Color oscuro para el efecto de fondo */
+    color: #d6c5b3; /* Color oscuro para el efecto de fondo */
     opacity: 0.8;
     z-index: 5; /* Detrás del contenido pero encima del fondo */
     pointer-events: none; /* Ignora clics */
