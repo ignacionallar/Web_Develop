@@ -259,6 +259,18 @@ body {
     color: #b9a998;
 }
 
+/* Carrusel vertical para cursos más solicitados */
+.carousel-container {
+    height: 300px; /* Altura fija para mostrar 2-3 tarjetas */
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+}
+
 /* ---------------------- */
 /* Footer */
 /* ---------------------- */
