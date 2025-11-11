@@ -29,43 +29,43 @@ document.addEventListener('DOMContentLoaded', function() {
         const cursos = [
             {
                 nombre: 'Fundamentos de Programación',
-                icono: 'assets/icons/brain.svg',
-                imagen: 'assets/img/placeholder.jpg',
+                icono: 'assets/brain.svg',
+                imagen: 'assets/brain.svg',
                 informacion: 'Este curso te permitirá comprender los conceptos fundamentales de la programación y desarrollar habilidades prácticas mediante ejercicios y proyectos reales.',
                 contenido: '- Introducción a la lógica de programación.<br>- Variables, tipos de datos y operadores.<br>- Estructuras de control (condicionales y bucles).<br>- Proyecto final de aplicación básica.'
             },
             {
                 nombre: 'Matemática para Informática',
-                icono: 'assets/icons/calculator.svg',
-                imagen: 'assets/img/placeholder.jpg',
+                icono: 'assets/calculator.svg',
+                imagen: 'assets/calculator.svg',
                 informacion: 'Domina los conceptos matemáticos esenciales para la informática, incluyendo lógica, álgebra y estadística aplicada.',
                 contenido: '- Lógica matemática y proposicional.<br>- Álgebra lineal básica.<br>- Estadística descriptiva.<br>- Aplicaciones en algoritmos.'
             },
             {
                 nombre: 'Programación I',
-                icono: 'assets/icons/code1.svg',
-                imagen: 'assets/img/placeholder.jpg',
+                icono: 'assets/code.svg',
+                imagen: 'assets/code.svg',
                 informacion: 'Aprende los fundamentos avanzados de la programación estructurada y orientada a objetos.',
                 contenido: '- Programación orientada a objetos.<br>- Clases, objetos y herencia.<br>- Manejo de excepciones.<br>- Desarrollo de aplicaciones simples.'
             },
             {
                 nombre: 'Programación II',
-                icono: 'assets/icons/code2.svg',
-                imagen: 'assets/img/placeholder.jpg',
+                icono: 'assets/code.svg',
+                imagen: 'assets/code.svg',
                 informacion: 'Profundiza en técnicas avanzadas de programación y desarrollo de software.',
                 contenido: '- Patrones de diseño.<br>- Estructuras de datos avanzadas.<br>- Programación concurrente.<br>- Proyecto final complejo.'
             },
             {
                 nombre: 'Base de Datos',
-                icono: 'assets/icons/database.svg',
-                imagen: 'assets/img/placeholder.jpg',
+                icono: 'assets/database.svg',
+                imagen: 'assets/database.svg',
                 informacion: 'Aprende a diseñar, implementar y gestionar bases de datos relacionales.',
                 contenido: '- Modelado de datos y normalización.<br>- SQL para consultas y manipulación.<br>- Diseño de esquemas.<br>- Optimización de consultas.'
             },
             {
                 nombre: 'Electrónica',
-                icono: 'assets/icons/plug.svg',
-                imagen: 'assets/img/placeholder.jpg',
+                icono: 'assets/plug.svg',
+                imagen: 'assets/plug.svg',
                 informacion: 'Introducción a los principios de la electrónica y circuitos básicos.',
                 contenido: '- Leyes de Kirchhoff y circuitos.<br>- Componentes electrónicos básicos.<br>- Diseño de circuitos simples.<br>- Simulación y prototipado.'
             }
@@ -127,21 +127,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 imagen: '',
                 informacion: 'Este sistema fue desarrollado para optimizar la asignación y gestión de horarios de profesores en instituciones educativas grandes. Permite a los administradores generar horarios sin conflictos, gestionar la disponibilidad docente y generar reportes detallados.',
                 tecnologias: '- Backend: PHP (Laravel)<br>- Frontend: HTML, CSS, JavaScript<br>- Base de Datos: MySQL<br>- Control de Versiones: Git / GitHub',
-                enlaces: { demo: '#', repo: '#' }
+                enlaces: { demo: '#', repo: 'https://github.com/ignacionallar/SGHD' }
             },
             {
                 nombre: 'Guía de Funciones',
                 imagen: '',
-                informacion: 'Una guía interactiva para aprender funciones matemáticas y su aplicación en programación. Incluye ejemplos, gráficos y ejercicios prácticos.',
-                tecnologias: '- Tecnologías: HTML, CSS, JavaScript<br>- Librerías: Chart.js para gráficos<br>- Hosting: GitHub Pages',
-                enlaces: { demo: '#', repo: '#' }
+                informacion: 'Una guía interactiva para aprender funciones y procedimientos para programar.',
+                tecnologias: '- Tecnologías: C<br>- Librerías: Math.h<br>- Software: ZinjaI',
+                enlaces: { demo: '#', repo: 'nodisponible.html' }
             },
             {
                 nombre: 'Blogsite',
                 imagen: '',
                 informacion: 'Un sitio web de blog personal con sistema de gestión de contenido básico, comentarios y integración con redes sociales.',
-                tecnologias: '- Backend: Node.js con Express<br>- Frontend: React<br>- Base de Datos: MongoDB<br>- Autenticación: JWT',
-                enlaces: { demo: '#', repo: '#' }
+                tecnologias: '- Frontend: HTML, CSS, JavaScript<br>- Control de Versiones: Git / GitHub<br>- Despliegue: GitHub Pages',
+                enlaces: { demo: '#', repo: 'https://github.com/ignacionallar/Web_Develop' }
             }
         ];
 
@@ -188,7 +188,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         <details>
                             <summary>Enlaces y Repositorio</summary>
                             <div class="contenido-acordeon">
-                                <a href="${proyecto.enlaces.demo}" target="_blank" class="btn btn-primary btn-acordeon">Ver Demo</a>
                                 <a href="${proyecto.enlaces.repo}" target="_blank" class="btn btn-secondary btn-acordeon">Repositorio GitHub</a>
                             </div>
                         </details>
