@@ -1343,4 +1343,10 @@ details p {
         font-size: 36px;
         margin-bottom: 20px;
     }
+
+    .no-disponible {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
 }

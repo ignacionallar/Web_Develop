@@ -1,6 +1,27 @@
 // JavaScript básico para el sitio web de Ignacio Nallar
 //console.log("Script cargado correctamente");
 
+// Lógica para manejar errores 404 y redirecciones
+window.addEventListener('error', function(e) {
+    // Si hay un error de carga de recurso crítico, redirigir a 404
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK') {
+        // Solo redirigir si es un error de 404 en recursos
+        if (e.target.src && e.target.src.includes('404')) {
+            return; // Evitar loop
+        }
+        window.location.href = '404.html';
+    }
+});
+
+// Verificar si la página tiene contenido válido, si no, asumir 404
+document.addEventListener('DOMContentLoaded', function() {
+    const body = document.body;
+    const hasMainContent = body.querySelector('.hero') || body.querySelector('.sobre-mi') || body.querySelector('.formacion') || body.querySelector('.cursos') || body.querySelector('.habilidades') || body.querySelector('.proyectos') || body.querySelector('.seccion-contacto') || body.querySelector('.no-disponible');
+    if (!hasMainContent && !window.location.pathname.includes('404.html')) {
+        window.location.href = '404.html';
+    }
+});
+
 // Funciones de navegación y animaciones pueden agregarse aquí
 
 // Carrusel vertical para cursos más solicitados
